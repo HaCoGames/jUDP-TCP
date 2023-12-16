@@ -68,8 +68,12 @@ public class Main {
         TCPClient tcpClient;
         tcpClient = new TCPClient(PORT, HOSTNAME);
 
+        Thread.sleep(200);
+
         tcpClient.connect();
         tcpClient.send("Joe \n mana");
         tcpClient.close();
+
+        tcpThread.interrupt();
     }
 }
